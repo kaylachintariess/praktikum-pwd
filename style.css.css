@@ -1,0 +1,526 @@
+/* ==========================================================================
+   style.css - Tampilan Clean Editorial & E-Commerce Minimalis
+   ========================================================================== */
+
+:root {
+    --bg-page: #f7f7f5;
+    --bg-surface: #ffffff;
+    --bg-subtle: #f0f0ed;
+    --text-primary: #18181b;
+    --text-secondary: #52525b;
+    --text-muted: #71717a;
+    --border-line: #e4e4e7;
+    --border-strong: #d4d4d8;
+    --accent-primary: #1d4ed8;
+    --accent-hover: #1e40af;
+    --success: #15803d;
+    --success-hover: #166534;
+    --danger: #b91c1c;
+    --danger-bg: #fef2f2;
+    --radius-sm: 6px;
+    --radius-md: 8px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: var(--bg-page);
+    color: var(--text-primary);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Header / Navigasi Atas */
+header {
+    background-color: var(--bg-surface);
+    border-bottom: 1px solid var(--border-line);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-inner {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0.9rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.brand {
+    font-size: 1.25rem;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    color: var(--text-primary);
+}
+
+.brand span {
+    color: var(--accent-primary);
+}
+
+.btn-toggle-cart {
+    background-color: var(--text-primary);
+    color: #ffffff;
+    border: 1px solid var(--text-primary);
+    padding: 0.5rem 0.95rem;
+    border-radius: var(--radius-sm);
+    font-family: inherit;
+    font-weight: 600;
+    font-size: 0.875rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+    transition: background-color 0.15s ease;
+}
+
+.btn-toggle-cart:hover {
+    background-color: #27272a;
+}
+
+.badge-count {
+    background-color: #ffffff;
+    color: var(--text-primary);
+    font-weight: 700;
+    padding: 0.1rem 0.45rem;
+    border-radius: 4px;
+    font-size: 0.78rem;
+}
+
+/* Layout Utama */
+.container {
+    max-width: 1240px;
+    margin: 1.75rem auto 3rem;
+    padding: 0 1.5rem;
+    display: grid;
+    grid-template-columns: 1fr 360px;
+    gap: 1.75rem;
+    align-items: start;
+}
+
+/* Toolbar Katalog & Pencarian */
+.catalog-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.toolbar {
+    background-color: var(--bg-surface);
+    padding: 1.1rem 1.25rem;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-line);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.toolbar h2 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+.toolbar-subtitle {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    margin-top: 0.15rem;
+}
+
+.search-box {
+    position: relative;
+    flex: 1;
+    min-width: 230px;
+    max-width: 320px;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 0.55rem 0.85rem 0.55rem 2.2rem;
+    border: 1px solid var(--border-strong);
+    border-radius: var(--radius-sm);
+    background-color: var(--bg-page);
+    font-size: 0.875rem;
+    font-family: inherit;
+    color: var(--text-primary);
+    outline: none;
+    transition: border-color 0.15s ease, background-color 0.15s ease;
+}
+
+.search-box input:focus {
+    background-color: var(--bg-surface);
+    border-color: var(--accent-primary);
+}
+
+.search-icon {
+    position: absolute;
+    left: 0.7rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0.85rem;
+    opacity: 0.65;
+    pointer-events: none;
+}
+
+/* Grid Produk */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(225px, 1fr));
+    gap: 1rem;
+}
+
+.product-card {
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-line);
+    border-radius: var(--radius-md);
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: border-color 0.15s ease;
+}
+
+.product-card:hover {
+    border-color: #a1a1aa;
+}
+
+.product-icon {
+    width: 100%;
+    height: 108px;
+    background-color: var(--bg-subtle);
+    border-radius: var(--radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.6rem;
+    margin-bottom: 0.9rem;
+}
+
+.product-title {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    line-height: 1.35;
+    margin-bottom: 0.35rem;
+}
+
+.product-price {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    font-variant-numeric: tabular-nums;
+    margin-bottom: 0.55rem;
+}
+
+.product-stock {
+    font-size: 0.78rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.95rem;
+    display: inline-block;
+    background-color: var(--bg-subtle);
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+}
+
+.product-stock.habis {
+    color: var(--danger);
+    background-color: var(--danger-bg);
+    font-weight: 600;
+}
+
+.btn-add-cart {
+    width: 100%;
+    padding: 0.58rem 0.85rem;
+    background-color: var(--accent-primary);
+    color: #ffffff;
+    border: none;
+    border-radius: var(--radius-sm);
+    font-family: inherit;
+    font-weight: 600;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: background-color 0.15s ease;
+}
+
+.btn-add-cart:hover {
+    background-color: var(--accent-hover);
+}
+
+.btn-add-cart.out-of-stock {
+    background-color: #e4e4e7;
+    color: #71717a;
+    cursor: not-allowed;
+}
+
+/* Panel Keranjang Belanja */
+.cart-panel {
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-line);
+    border-radius: var(--radius-md);
+    padding: 1.25rem;
+    position: sticky;
+    top: 76px;
+}
+
+.cart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding-bottom: 0.8rem;
+    border-bottom: 1px solid var(--border-line);
+    margin-bottom: 1rem;
+}
+
+.cart-header h2 {
+    font-size: 1.05rem;
+    font-weight: 700;
+}
+
+.cart-note {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+}
+
+.cart-list {
+    list-style: none;
+    max-height: 320px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    margin-bottom: 1rem;
+}
+
+.cart-empty-msg {
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.84rem;
+    padding: 1.75rem 0.75rem;
+    background-color: var(--bg-page);
+    border-radius: var(--radius-sm);
+    border: 1px dashed var(--border-strong);
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.65rem;
+    padding: 0.65rem 0.75rem;
+    background-color: var(--bg-page);
+    border: 1px solid var(--border-line);
+    border-radius: var(--radius-sm);
+}
+
+.cart-item-info {
+    flex: 1;
+}
+
+.cart-item-name {
+    font-size: 0.86rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.cart-item-price {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    font-variant-numeric: tabular-nums;
+    margin-top: 0.1rem;
+}
+
+.btn-remove-item {
+    background-color: transparent;
+    color: var(--danger);
+    border: 1px solid #fecaca;
+    padding: 0.3rem 0.55rem;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 0.75rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.btn-remove-item:hover {
+    background-color: var(--danger);
+    color: #ffffff;
+    border-color: var(--danger);
+}
+
+.cart-summary {
+    border-top: 1px solid var(--border-line);
+    padding-top: 0.85rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+    margin-bottom: 1rem;
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.86rem;
+    color: var(--text-secondary);
+}
+
+.summary-row.total {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    padding-top: 0.35rem;
+    border-top: 1px dashed var(--border-line);
+    font-variant-numeric: tabular-nums;
+}
+
+.cart-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1.35fr;
+    gap: 0.6rem;
+}
+
+.btn-clear {
+    background-color: var(--bg-surface);
+    color: var(--text-secondary);
+    border: 1px solid var(--border-strong);
+    padding: 0.6rem;
+    border-radius: var(--radius-sm);
+    font-family: inherit;
+    font-weight: 600;
+    font-size: 0.84rem;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.btn-clear:hover {
+    color: var(--danger);
+    border-color: var(--danger);
+    background-color: var(--danger-bg);
+}
+
+.btn-checkout {
+    background-color: var(--success);
+    color: #ffffff;
+    border: none;
+    padding: 0.6rem;
+    border-radius: var(--radius-sm);
+    font-family: inherit;
+    font-weight: 600;
+    font-size: 0.84rem;
+    cursor: pointer;
+    transition: background-color 0.15s ease;
+}
+
+.btn-checkout:hover {
+    background-color: var(--success-hover);
+}
+
+/* Area Bukti Transaksi (Struk Checkout) */
+.receipt-box {
+    display: none;
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-strong);
+    border-left: 4px solid var(--success);
+    border-radius: var(--radius-md);
+    padding: 1.25rem;
+}
+
+.receipt-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.75rem;
+}
+
+.receipt-header h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.receipt-tag {
+    background-color: #dcfce7;
+    color: var(--success);
+    font-size: 0.72rem;
+    font-weight: 700;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    letter-spacing: 0.04em;
+}
+
+.receipt-meta {
+    font-size: 0.84rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.85rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px dashed var(--border-strong);
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.receipt-items {
+    list-style: none;
+    font-size: 0.86rem;
+    margin-bottom: 0.85rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.receipt-items li {
+    display: flex;
+    justify-content: space-between;
+    color: var(--text-secondary);
+}
+
+.receipt-total {
+    font-weight: 700;
+    font-size: 0.95rem;
+    border-top: 1px solid var(--border-line);
+    padding-top: 0.65rem;
+    display: flex;
+    justify-content: space-between;
+    color: var(--text-primary);
+}
+
+/* Responsif Tablet & HP */
+@media (max-width: 900px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+
+    .cart-panel {
+        position: static;
+    }
+}
+
+@media (max-width: 520px) {
+    .header-inner,
+    .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .toolbar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .search-box {
+        max-width: 100%;
+    }
+
+    .cart-buttons {
+        grid-template-columns: 1fr;
+    }
+}
